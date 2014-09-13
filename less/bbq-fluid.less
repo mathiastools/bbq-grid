@@ -1,7 +1,7 @@
 
-@container_width: 1200; // in pixels
-@columns: 12;
-@gutter: 12;
+//@container_width: 1200; // in pixels
+//@columns: 12;
+//@gutter: 12;
 
 // fluid
 @container_width: 100; // in pixels
@@ -13,25 +13,25 @@
 /* BBQ grid system */
 
 .makeColumn(@x) {
-	width: unit( ( ( (@container_width  - ((@columns - 1)*@gutter) ) / @columns)*@x) + ((@x - 1)*@gutter), px) ;
+	//width: unit( ( ( (@container_width  - ((@columns - 1)*@gutter) ) / @columns)*@x) + ((@x - 1)*@gutter), px) ;
 }
 
 .makeColumn(@x) {
-	width: unit( ( ( (@container_width  - ((@columns - 1)*@gutter) ) / @columns)*@x) + ((@x - 1)*@gutter), %) ;
+	width: unit( ( ( (@container_width  - (@columns*@gutter) ) / @columns)*@x) + ((@x - 1)*@gutter), %) ;
 }
 
 
 .container { 
 	position: relative; 
-	width: unit(@container_width,px);
+	//width: unit(@container_width,px);
 
-	width: 1200px;
+	//width: 1200px;
 
 	margin: 0 auto; 
 	padding: 0;
 }
 .container .row {
-	margin-left: unit(-@gutter,px);
+	//margin-left: unit(-@gutter,px);
 
 
 	margin-left: unit(-@gutter,%);
