@@ -13,36 +13,21 @@
 /* BBQ grid system */
 
 .makeColumn(@x) {
-	//width: unit( ( ( (@container_width  - ((@columns - 1)*@gutter) ) / @columns)*@x) + ((@x - 1)*@gutter), px) ;
-}
-
-.makeColumn(@x) {
 	width: unit( ( ( (@container_width  - (@columns*@gutter) ) / @columns)*@x) + ((@x - 1)*@gutter), %) ;
 }
 
-
 .container { 
 	position: relative; 
-	//width: unit(@container_width,px);
-
-	//width: 1200px;
-
 	margin: 0 auto; 
 	padding: 0;
 }
 .container .row {
-	//margin-left: unit(-@gutter,px);
-
-
 	margin-left: unit(-@gutter,%);
-
 	margin-bottom: 20px;
 }
 .container [class*="span"] {
 	display: inline;
 	float: left;
-	margin-left: unit( @gutter ,px);
-
 	margin-left: unit( @gutter ,%);
 }
 .span1 {
