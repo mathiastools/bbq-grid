@@ -2,9 +2,11 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8" /> 
-		
+
 		<link href="../css/style.css" rel="stylesheet" type="text/css">
 		<link href="../css/bbq-fluid.css" rel="stylesheet" type="text/css">
+
+		<link href='http://fonts.googleapis.com/css?family=Raleway:500,900,200' rel='stylesheet' type='text/css'>
 	</head>
 	<body>
 		

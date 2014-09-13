@@ -1,3 +1,6 @@
+/**
+ * inspired by Profound Grid -> http://www.profoundgrid.com/
+ */
 
 //@container_width: 1200; // in pixels
 //@columns: 12;
@@ -15,6 +18,10 @@
 .makeColumn(@x) {
 	width: unit( ( ( (@container_width  - (@columns*@gutter) ) / @columns)*@x) + ((@x - 1)*@gutter), %) ;
 }
+.makeOffset(@x) {
+	//margin-left: unit( ( ( (@container_width  - ((@columns - 1)*@gutter) ) / @columns)*@x) + ((@x - 1)*@gutter)+(2*@gutter), px) ;
+	margin-left: unit( ( ( (@container_width  - (@columns*@gutter) ) / @columns)*@x) + ((@x - 1)*@gutter)+(2*@gutter), %) ;
+}
 
 .container { 
 	position: relative; 
@@ -25,7 +32,8 @@
 	margin-left: unit(-@gutter,%);
 	margin-bottom: 20px;
 }
-.container [class*="span"] {
+//.container [class*="span"] {
+[class*="span"] {
 	display: inline;
 	float: left;
 	margin-left: unit( @gutter ,%);
@@ -65,6 +73,40 @@
 }
 .span12 {
 	.makeColumn(12);
+}
+
+.push1 {
+	.makeOffset(1);
+}
+.push2 {
+	.makeOffset(2);
+}
+.push3 {
+	.makeOffset(3);
+}
+.push4 {
+	.makeOffset(4);
+}
+.push5 {
+	.makeOffset(5);
+}
+.push6 {
+	.makeOffset(6);
+}
+.push7 {
+	.makeOffset(7);
+}
+.push8 {
+	.makeOffset(8);
+}
+.push9 {
+	.makeOffset(9);
+}
+.push10 {
+	.makeOffset(10);
+}
+.push11 {
+	.makeOffset(11);
 }
 
 // Nested Column Classes
