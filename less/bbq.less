@@ -1,0 +1,96 @@
+@container_width: 1200; // in pixels
+@columns: 12;
+@gutter: 12;
+
+// ==============================
+
+/* BBQ grid system */
+
+.makeColumn(@x) {
+	width: unit( ( ( (@container_width  - ((@columns - 1)*@gutter) ) / @columns)*@x) + ((@x - 1)*@gutter), px) ;
+}
+
+
+.container { 
+	position: relative; 
+	width: unit(@container_width,px);
+	margin: 0 auto; 
+	padding: 0;
+}
+.container .row {
+	margin-left: unit(-@gutter,px);
+	margin-bottom: 20px;
+}
+.container [class*="span"] {
+	display: inline;
+	float: left;
+	margin-left: unit( @gutter ,px);
+}
+.span1 {
+	.makeColumn(1);
+}
+.span2 {
+	.makeColumn(2);
+}
+.span3 {
+	.makeColumn(3);
+}
+.span4 {
+	.makeColumn(4);
+}
+.span5 {
+	.makeColumn(5);
+}
+.span6 {
+	.makeColumn(6);
+}
+.span7 {
+	.makeColumn(7);
+}
+.span8 {
+	.makeColumn(8);
+}
+.span9 {
+	.makeColumn(9);
+}
+.span10 {
+	.makeColumn(10);
+}
+.span11 {
+	.makeColumn(11);
+}
+.span12 {
+	.makeColumn(12);
+}
+
+// Nested Column Classes
+
+/* #Clearing */
+
+.container:after { content: "\0020"; display: block; height: 0; clear: both; visibility: hidden; }
+
+.clearfix:before,
+.clearfix:after,
+.row:before,
+.row:after {
+  content: '\0020';
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0; }
+.row:after,
+.clearfix:after {
+  clear: both; }
+.row,
+.clearfix {
+  zoom: 1; }
+
+.clear {
+  clear: both;
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
