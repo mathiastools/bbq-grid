@@ -1,1 +1,32 @@
-*,*:before,*:after{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}body{color:#454545;font-family:'Raleway',Arial,sans-serif;font-weight:900;font-size:22px;text-align:center}[class*="span"]{height:60px;line-height:60px;border-radius:8px}[class*="span"]:nth-child(2n){background:#fff200}[class*="span"]:nth-child(2n+1){background:#fff200}/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImxlc3Mvc3R5bGUubGVzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxFQUFHLENBQUMsUUFBUyxDQUFDLE9BQ2IsNkJBQUEsQ0FDQSwwQkFBQSxDQUNBLHNCQUVELEtBQ0MsYUFBQSxDQUNBLFlBQWEsMEJBQWIsQ0FDQSxlQUFBLENBQ0EsY0FBQSxDQUNBLGtCQUdELGdCQUNDLFdBQUEsQ0FDQSxnQkFBQSxDQUNBLGtCQUdELGVBQWUsVUFBVSxLQUN4QixtQkFHRCxlQUFlLFVBQVUsT0FDeEIifQ== */
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body {
+  color: #454545;
+  font-family: 'Raleway', Arial, sans-serif;
+  font-weight: 900;
+  font-size: 22px;
+  text-align: center;
+}
+[class*="span"] {
+  height: 60px;
+  line-height: 60px;
+  border-radius: 8px;
+}
+[class*="span"] {
+  background: #fff200;
+}
+/*
+[class*="span"]:nth-child(2n) {
+	background: #fff200;
+}
+
+[class*="span"]:nth-child(2n+1) {
+	background: #fff200;
+}
+*/
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImxlc3Mvc3R5bGUubGVzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtBQUFHLENBQUM7QUFBUyxDQUFDO0VBQ2IsOEJBQUE7RUFDQSwyQkFBQTtFQUNBLHNCQUFBOztBQUVEO0VBQ0MsY0FBQTtFQUNBLGFBQWEsNEJBQWI7RUFDQSxnQkFBQTtFQUNBLGVBQUE7RUFDQSxrQkFBQTs7QUFHRDtFQUNDLFlBQUE7RUFDQSxpQkFBQTtFQUNBLGtCQUFBOztBQUdEO0VBQ0MsbUJBQUEifQ== */

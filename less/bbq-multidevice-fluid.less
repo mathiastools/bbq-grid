@@ -1,0 +1,293 @@
+/**
+ * inspired by Profound Grid -> http://www.profoundgrid.com/
+ *
+ * BBQ grid system
+ *
+ * mobile first multidevice fluid grid system - like Twitter bootstrap, more configurable grid, has classes for small, medium, large and extra large screen
+ */
+
+// ==================================================
+// Table of Contents
+// ==================================================
+// [1] Variables
+// [2] Helper classes
+// [3] Grid base
+// [4] Columns
+// [4] Push classes
+// [4] Clearing
+
+
+// ==================================================
+// [1] Variables
+// ==================================================
+
+@container_width: 100; // in percent
+@columns: 12;          // in percent
+@gutter: 1; 		   // in percent
+
+@screen-sm-min: 0px;
+@screen-md-min: 48em; // cca 768px
+@screen-lg-min: 62.5em;
+@screen-xl-min: 75em;
+
+// ==================================================
+// [2] Helper classes
+// ==================================================
+
+.makeColumn(@x) {
+	width: unit( ( ( (@container_width  - (@columns*@gutter) ) / @columns)*@x) + ((@x - 1)*@gutter), %) ;
+}
+.makeOffset(@x) {
+	margin-left: unit( ( ( (@container_width  - (@columns*@gutter) ) / @columns)*@x) + ((@x - 1)*@gutter)+(2*@gutter), %) ;
+}
+
+// ==================================================
+// [3] Grid base
+// ==================================================
+
+.container { 
+	position: relative; 
+	margin: 0 auto; 
+	padding: 0;
+}
+.container .row {
+	margin-left: unit(-@gutter,%);
+	margin-bottom: 20px;
+}
+
+[class*="span"] {
+	display: inline;
+	float: left;
+	margin-left: unit( @gutter ,%);
+}
+
+/* container fixed & fluid */
+
+@media (min-width: @screen-md-min) {
+	.container { 
+		width: @screen-md-min;
+	}
+}
+@media (min-width: @screen-lg-min) {
+	.container { 
+		width: @screen-lg-min;
+	}
+}
+@media (min-width: @screen-xl-min) {
+	.container { 
+		width: @screen-xl-min;
+	}
+}
+
+.container-fluid {
+	position: relative; 
+	margin: 0 auto; 
+	padding: 0;
+}
+
+// ==================================================
+// [4] Columns
+// ==================================================
+.span1 {
+	.makeColumn(1);
+}
+.span2 {
+	.makeColumn(2);
+}
+.span3 {
+	.makeColumn(3);
+}
+.span4 {
+	.makeColumn(4);
+}
+.span5 {
+	.makeColumn(5);
+}
+.span6 {
+	.makeColumn(6);
+}
+.span7 {
+	.makeColumn(7);
+}
+.span8 {
+	.makeColumn(8);
+}
+.span9 {
+	.makeColumn(9);
+}
+.span10 {
+	.makeColumn(10);
+}
+.span11 {
+	.makeColumn(11);
+}
+.span12 {
+	.makeColumn(12);
+}
+
+
+
+.generate-span(@columns);
+
+.generate-span(@n, @i: 1) when (@i =< @n) {
+  .span@{i} {
+    .makeColumn(@i);
+  }
+  .generate-span(@n, (@i + 1));
+}
+
+// ==================================================
+// [5] Push classes
+// ==================================================
+.push1 {
+	.makeOffset(1);
+}
+.push2 {
+	.makeOffset(2);
+}
+.push3 {
+	.makeOffset(3);
+}
+.push4 {
+	.makeOffset(4);
+}
+.push5 {
+	.makeOffset(5);
+}
+.push6 {
+	.makeOffset(6);
+}
+.push7 {
+	.makeOffset(7);
+}
+.push8 {
+	.makeOffset(8);
+}
+.push9 {
+	.makeOffset(9);
+}
+.push10 {
+	.makeOffset(10);
+}
+.push11 {
+	.makeOffset(11);
+}
+
+.generate-push(@columns - 1);
+
+.generate-push(@n, @i: 1) when (@i =< @n) {
+  .push@{i} {
+    .makeOffset(@i);
+  }
+  .generate-push(@n, (@i + 1));
+}
+
+
+.generate-sm-columns(@columns);
+
+.generate-sm-columns(@n, @i: 1) when (@i =< @n) {
+  .col-sm-@{i} {
+    .makeColumn(@i);
+  }
+  .generate-sm-columns(@n, (@i + 1));
+}
+
+
+@media (min-width: @screen-sm-min) {
+	
+	[class*="span"] {
+		background: red;
+	}
+
+	/* columns col-sm- */
+}
+@media (min-width: @screen-md-min) {
+	
+	[class*="span"] {
+		background: green;
+	}
+
+	.generate-md-columns(@columns);
+
+	.generate-md-columns(@n, @i: 1) when (@i =< @n) {
+	  .col-md-@{i} {
+	    .makeColumn(@i);
+	  }
+	  .generate-md-columns(@n, (@i + 1));
+	}
+
+}
+@media (min-width: @screen-lg-min) {
+	
+	[class*="span"] {
+		background: blue;
+	}
+
+	.generate-lg-columns(@columns);
+
+	.generate-lg-columns(@n, @i: 1) when (@i =< @n) {
+	  .col-lg-@{i} {
+	    .makeColumn(@i);
+	  }
+	  .generate-lg-columns(@n, (@i + 1));
+	}
+
+}
+@media (min-width: @screen-xl-min) {
+	
+	[class*="span"] {
+		background: #fff200;
+	}
+
+	.generate-xl-columns(@columns);
+
+	.generate-xl-columns(@n, @i: 1) when (@i =< @n) {
+	  .col-xl-@{i} {
+	    .makeColumn(@i);
+	  }
+	  .generate-xl-columns(@n, (@i + 1));
+	}
+
+}
+
+// ==================================================
+// [6] Clearing
+// ==================================================
+
+.container:after { content: "\0020"; display: block; height: 0; clear: both; visibility: hidden; }
+
+.clearfix:before,
+.clearfix:after,
+.row:before,
+.row:after {
+  content: '\0020';
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0; }
+.row:after,
+.clearfix:after {
+  clear: both; }
+.row,
+.clearfix {
+  zoom: 1; }
+
+.clear {
+  clear: both;
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+
+.generate-columns(4);
+
+.generate-columns(@n, @i: 1) when (@i =< @n) {
+  .column-@{i} {
+    width: (@i * 100% / @n);
+  }
+  .generate-columns(@n, (@i + 1));
+}

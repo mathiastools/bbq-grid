@@ -3,16 +3,17 @@ module.exports = function(grunt) {
     less: {
       development: {
         options: {
-          compress: true,
-          yuicompress: true,
-          optimization: 2,
+          //compress: true,
+          //yuicompress: true,
+          //optimization: 2,
           sourceMap: true
         },
         files: {
           // target.css file: source.less file
           "css/style.css": "less/style.less",
           "css/bbq.css": "less/bbq.less",
-          "css/bbq-fluid.css": "less/bbq-fluid.less"
+          "css/bbq-fluid.css": "less/bbq-fluid.less",
+          "css/bbq-multidevice-fluid.css": "less/bbq-multidevice-fluid.less"
         }
       }
     },
